@@ -9,6 +9,7 @@
     :root {
       --navy: #17324d;
       --blue: #246ba8;
+      --light-blue: #eaf4fb;
       --text: #1f2933;
       --white: #ffffff;
       --border: #d9e2ec;
@@ -50,6 +51,7 @@
       text-align: center;
       position: sticky;
       top: 0;
+      z-index: 10;
     }
 
     nav a {
@@ -81,6 +83,10 @@
       margin-bottom: 18px;
     }
 
+    h3 {
+      color: var(--navy);
+    }
+
     .intro {
       background: var(--white);
       padding: 25px;
@@ -103,7 +109,23 @@
 
     .card h3 {
       margin-top: 0;
+    }
+
+    .artifact-card {
+      margin-bottom: 26px;
+    }
+
+    .label {
+      display: block;
       color: var(--navy);
+      font-weight: bold;
+      margin-top: 18px;
+      margin-bottom: 4px;
+    }
+
+    .artifact-card ul {
+      margin-top: 4px;
+      padding-left: 22px;
     }
 
     .button {
@@ -231,19 +253,17 @@
         <div class="card">
           <h3>Collaboration and Decision-Making</h3>
           <p>
-            My background in manufacturing and project-focused coursework has strengthened my
-            understanding of teamwork, quality, communication, and operational decision-making.
-            My artifacts show how technology can support reliable business processes and
-            organizational goals.
+            My manufacturing background and project-focused coursework strengthened my understanding
+            of teamwork, quality, communication, and operational decision-making. My artifacts show
+            how technical solutions can support reliable business processes and organizational goals.
           </p>
         </div>
 
         <div class="card">
           <h3>Professional Communication</h3>
           <p>
-            My written narratives, code review video, and self-assessment demonstrate my ability
-            to explain technical decisions clearly to instructors, employers, and other
-            stakeholders.
+            My written narratives, code review video, and self-assessment demonstrate my ability to
+            explain technical decisions clearly to instructors, employers, and other stakeholders.
           </p>
         </div>
 
@@ -284,8 +304,8 @@
         <h3>CS 499 Code Review</h3>
 
         <p>
-          My code review evaluates the strengths, limitations, security considerations,
-          and planned enhancements for each of my three ePortfolio artifacts.
+          My code review evaluates the existing functionality, areas for improvement, security
+          considerations, and planned enhancements for all three ePortfolio artifacts.
         </p>
 
         <a class="button" href="https://youtu.be/SrETbnKhYyg" target="_blank" rel="noopener noreferrer">
@@ -295,91 +315,135 @@
     </section>
 
     <section id="artifacts">
-      <h2>Enhanced Artifacts</h2>
+      <h2>Artifacts and Enhancements</h2>
 
-      <div class="grid">
+      <div class="card artifact-card">
+        <h3>Software Design and Engineering: Travlr Getaways</h3>
 
-        <div class="card">
-          <h3>Software Design and Engineering</h3>
-          <p><strong>Artifact:</strong> Travlr Getaways Full-Stack Application</p>
+        <span class="label">Original Artifact</span>
+        <p>
+          Travlr Getaways is a full-stack travel booking application originally developed in
+          CS 465: Full Stack Development. It includes a Node.js and Express public website,
+          an Angular administrative interface, a REST API, and MongoDB data storage.
+        </p>
 
-          <p>
-            I enhanced this Node.js, Express, MongoDB, and Handlebars application by improving
-            validation, API error handling, environment configuration, JWT security, and dynamic
-            trip rendering.
-          </p>
+        <span class="label">Enhancements Implemented</span>
+        <ul>
+          <li>Added schema-level validation and clearer trip-data error messages.</li>
+          <li>Improved API controller error handling for invalid requests, duplicates, and missing records.</li>
+          <li>Moved MongoDB and JWT configuration values into environment variables.</li>
+          <li>Added a Handlebars-compatible error page and improved dynamic trip rendering.</li>
+        </ul>
 
-          <a class="button" href="artifacts/travlr.zip">
-            Download Original Artifact
-          </a>
+        <span class="label">Skills and Outcomes Demonstrated</span>
+        <p>
+          This artifact demonstrates full-stack software design, validation, secure configuration,
+          maintainability, API reliability, and communication of technical decisions. It supports
+          computing practices, security, design trade-offs, and professional communication outcomes.
+        </p>
 
-          <br>
+        <a class="button" href="artifacts/travlr.zip">
+          Download Original Artifact
+        </a>
 
-          <a class="button" href="artifacts/ChrisMitchell_CS499_MilestoneTwo_Travlr_Artifact.zip">
-            Download Enhanced Artifact
-          </a>
+        <br>
 
-          <br>
+        <a class="button" href="artifacts/ChrisMitchell_CS499_MilestoneTwo_Travlr_Artifact.zip">
+          Download Enhanced Artifact
+        </a>
 
-          <a class="button" href="narratives/CS499%20Milestone%202%20Narrative.docx">
-            Download Narrative (Word)
-          </a>
-        </div>
+        <br>
 
-        <div class="card">
-          <h3>Algorithms and Data Structures</h3>
-          <p><strong>Artifact:</strong> Project Two SSL Server</p>
+        <a class="button" href="narratives/CS499%20Milestone%202%20Narrative.docx">
+          Download Narrative (Word)
+        </a>
+      </div>
 
-          <p>
-            I enhanced this Java Spring Boot application by separating the SHA-256 hashing logic
-            into a service class, improving validation, returning structured JSON, and improving
-            byte-to-hexadecimal conversion.
-          </p>
+      <div class="card artifact-card">
+        <h3>Algorithms and Data Structures: Project Two SSL Server</h3>
 
-          <a class="button" href="artifacts/ChrisMitchell_SSLServer_Original_SourceCode.zip">
-            Download Original Artifact
-          </a>
+        <span class="label">Original Artifact</span>
+        <p>
+          Project Two SSL Server is a Java Spring Boot application originally developed in
+          CS 305: Software Security. The application uses HTTPS and provides a /hash endpoint
+          that generates a SHA-256 checksum from user-provided or default input.
+        </p>
 
-          <br>
+        <span class="label">Enhancements Implemented</span>
+        <ul>
+          <li>Moved hashing and input validation into a separate HashService class.</li>
+          <li>Added HashResponse to return organized JSON instead of manually generated HTML.</li>
+          <li>Added blank-input and maximum-length validation.</li>
+          <li>Improved byte-to-hex conversion with a character array and bitwise operations.</li>
+          <li>Moved the SSL keystore password into an environment variable.</li>
+        </ul>
 
-          <a class="button" href="artifacts/ChrisMitchell_SSLServer_SourceCode.zip">
-            Download Enhanced Artifact
-          </a>
+        <span class="label">Skills and Outcomes Demonstrated</span>
+        <p>
+          This artifact demonstrates algorithmic principles, byte-array processing, SHA-256 hashing,
+          input validation, structured response design, testing, and secure application configuration.
+          It supports algorithmic design, current computing practices, security, and communication outcomes.
+        </p>
 
-          <br>
+        <a class="button" href="artifacts/ChrisMitchell_SSLServer_Original_SourceCode.zip">
+          Download Original Artifact
+        </a>
 
-          <a class="button" href="narratives/CS499%20Module%204%20Milestone%203.docx">
-            Download Narrative (Word)
-          </a>
-        </div>
+        <br>
 
-        <div class="card">
-          <h3>Databases</h3>
-          <p><strong>Artifact:</strong> ChrisMitchellInventory Android Application</p>
+        <a class="button" href="artifacts/ChrisMitchell_SSLServer_SourceCode.zip">
+          Download Enhanced Artifact
+        </a>
 
-          <p>
-            I enhanced the SQLite database design by adding user-specific inventory records,
-            foreign key relationships, data validation, safer migration logic, and improved
-            repository methods.
-          </p>
+        <br>
 
-          <a class="button" href="artifacts/ChrisMitchellInventory.zip">
-            Download Original Artifact
-          </a>
+        <a class="button" href="narratives/CS499%20Module%204%20Milestone%203.docx">
+          Download Narrative (Word)
+        </a>
+      </div>
 
-          <br>
+      <div class="card artifact-card">
+        <h3>Databases: ChrisMitchellInventory Android Application</h3>
 
-          <a class="button" href="artifacts/ChrisMitchell_CS499_MilestoneFour_Database_Artifact.zip">
-            Download Enhanced Artifact
-          </a>
+        <span class="label">Original Artifact</span>
+        <p>
+          ChrisMitchellInventory is an Android inventory application originally developed for
+          a mobile programming course. It uses SQLite to store user accounts, password information,
+          and inventory records.
+        </p>
 
-          <br>
+        <span class="label">Enhancements Implemented</span>
+        <ul>
+          <li>Added a user_id relationship between users and inventory items.</li>
+          <li>Enabled SQLite foreign key constraints and added a quantity CHECK constraint.</li>
+          <li>Replaced the drop-and-recreate upgrade approach with a data-preserving migration.</li>
+          <li>Added user-specific create, read, update, and delete repository methods.</li>
+          <li>Improved validation, password handling, and user account logic.</li>
+        </ul>
 
-          <a class="button" href="narratives/ChrisMitchell%20CS499%20Milestone%204%20Database%20Narrative.docx">
-            Download Narrative (Word)
-          </a>
-        </div>
+        <span class="label">Skills and Outcomes Demonstrated</span>
+        <p>
+          This artifact demonstrates relational database design, foreign keys, migrations,
+          data validation, repository patterns, secure password handling, and user-specific
+          data protection. It supports computing practices, security, database design,
+          technical communication, and organizational decision-making outcomes.
+        </p>
 
+        <a class="button" href="artifacts/ChrisMitchellInventory.zip">
+          Download Original Artifact
+        </a>
+
+        <br>
+
+        <a class="button" href="artifacts/ChrisMitchell_CS499_MilestoneFour_Database_Artifact.zip">
+          Download Enhanced Artifact
+        </a>
+
+        <br>
+
+        <a class="button" href="narratives/ChrisMitchell%20CS499%20Milestone%204%20Database%20Narrative.docx">
+          Download Narrative (Word)
+        </a>
       </div>
     </section>
 
